@@ -2,7 +2,7 @@
  * @Author: Ali Ismail
  * @Date:   2018-03-31T11:02:15+02:00
  * @Last modified by:   Ali Ismail
- * @Last modified time: 2018-04-01T13:00:38+02:00
+ * @Last modified time: 2018-04-01T13:56:48+02:00
  */
  import React, { Component } from 'react';
  class Task extends Component {
@@ -13,7 +13,7 @@
          style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none'}}>
          {this.props.todo.value}
        </span>
-       <button>{this.props.todo.done ? 'undo' : 'Complete'}</button>>
+       <button onClick={() => this.props.handleClick(this.props.index)}>{this.props.todo.done ? 'undo' : 'Complete'}</button>>
        </div>
      )
    }
