@@ -2,27 +2,18 @@
  * @Author: Ali Ismail
  * @Date:   2018-03-30T23:43:05+02:00
  * @Last modified by:   Ali Ismail
- * @Last modified time: 2018-03-31T14:32:39+02:00
+ * @Last modified time: 2018-04-01T13:17:05+02:00
  */
 import React, { Component } from 'react';
 class Form extends Component {
-  state = {
-    inputValue:""
-  }
-
-handleChange = (e) => {
-    console.log(e.target.value);
-    this.setState({inputValue:e.target.value});
-
-  }
 
   render() {
     return (
       <div className="Form">
-      <form>
+      <form onSubmit={(e) => this.props.handleSubmit(e)}>
       <input
-        value={this.state.inputValue}
-        onChange={(e)=>this.handleChange(e)}
+        value={this.props.inputValue}
+        onChange={(e)=>this.props.handleChange(e)}
          />
       </form>
       </div>
